@@ -26,7 +26,7 @@ RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-4.
      /opt/conda/bin/conda install conda-build && \
      /opt/conda/bin/conda install ipython jupyter scikit-learn pandas matplotlib
 
-RUN git clone https://github.com/pytorch/pytorch.git && git checkout ac76ab5fca3734a94b41006969621039e8b72387
+RUN git clone https://github.com/pytorch/pytorch.git && cd pytorch && git checkout ac76ab5fca3734a94b41006969621039e8b72387
 
 RUN source /opt/conda/bin/activate  && \
     export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" && \
