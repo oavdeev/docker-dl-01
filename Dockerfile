@@ -28,11 +28,10 @@ RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-4.
 
 RUN git clone https://github.com/pytorch/pytorch.git && cd pytorch && git checkout ac76ab5fca3734a94b41006969621039e8b72387
 
-RUN source /opt/conda/bin/activate  && \
-    export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" && \
+RUN CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" /bin/bash -c "source /opt/conda/bin/activate  && \
     conda install numpy pyyaml mkl setuptools cmake gcc cffi && \
     conda install -c soumith magma-cuda80 && \
-    cd pytorch && python setup.py install
+    cd pytorch && python setup.py install"
 
 RUN /opt/conda/bin/pip install --upgrade --ignore-installed https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
 RUN apt-get update && apt-get install -y wget
