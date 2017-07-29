@@ -25,7 +25,7 @@ RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-4.
      ~/miniconda.sh -b -p /opt/conda && \
      rm ~/miniconda.sh && \
      /opt/conda/bin/conda install conda-build && \
-     /opt/conda/bin/conda install pytorch torchvision cuda80 -c soumith && 
+     /opt/conda/bin/conda install pytorch torchvision cuda80 -c soumith && \
      /opt/conda/bin/conda install ipython jupyter scikit-learn pandas matplotlib tqdm
 
 #RUN /opt/conda/bin/pip install --upgrade --ignore-installed https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
