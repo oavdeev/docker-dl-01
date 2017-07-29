@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
          build-essential \
          python-pip \
          python-dev \
+         python-qt4 \
          python-setuptools \
          cmake \
          git \
