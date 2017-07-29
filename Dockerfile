@@ -24,7 +24,7 @@ RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-4.
      ~/miniconda.sh -b -p /opt/conda && \
      rm ~/miniconda.sh && \
      /opt/conda/bin/conda install conda-build && \
-     /opt/conda/bin/conda install ipython jupyter scikit-learn pandas matplotlib
+     /opt/conda/bin/conda install ipython jupyter scikit-learn pandas matplotlib tqdm
 
 RUN /opt/conda/bin/conda install -c oavdeev -c soumith pytorch torchvision cuda80
 
