@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
          cmake \
          git \
          curl \
+         wget \
+         ssh \
          vim \
          ca-certificates \
          libjpeg-dev \
@@ -27,7 +29,4 @@ RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-4.
      /opt/conda/bin/conda install conda-build && \
      /opt/conda/bin/conda install ipython jupyter scikit-learn pandas matplotlib tqdm
 
-RUN /opt/conda/bin/conda install -c oavdeev -c soumith pytorch torchvision cuda80
-
-#RUN /opt/conda/bin/pip install --upgrade --ignore-installed https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
-RUN apt-get update && apt-get install -y wget
+RUN /opt/conda/bin/conda install -c oavdeev -c soumith pytorch==0.2.0.post1 torchvision cuda80
